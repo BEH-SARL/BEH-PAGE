@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEH - L'expertise, notre devoir</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- Pour icône FB -->
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="Logo BEH" class="logo-img"> <!-- TON LOGO ICI -->
+                <span class="site-name">BEH</span>
+            </div>
+            <p class="slogan" data-translate="slogan">l'expertise, notre devoir</p>
+            <nav>
+                <a href="#contact" class="cta-button" data-translate="nav_contact_button">Nous contacter</a>
+                <div class="language-switcher">
+                    <button onclick="switchLanguage('fr')">FR</button>
+                    <button onclick="switchLanguage('en')">EN</button>
+                    <button onclick="switchLanguage('es')">ES</button>
+                    <button onclick="switchLanguage('zh')">中文</button>
+                    <button onclick="switchLanguage('hi')">हिन्दी</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="projets">
+            <div class="container">
+                <h2 data-translate="projects_title">Nos Chantiers</h2>
+                <div class="gallery">
+                    <!-- Image 1 -->
+                    <div class="gallery-item">
+                        <img src="images/chantier-1.jpg" alt="Chantier BEH 1"> <!-- TA PREMIERE IMAGE -->
+                        <p data-translate="project1_desc">Description du chantier 1...</p> <!-- TA DESCRIPTION -->
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="gallery-item">
+                        <img src="images/chantier-2.jpg" alt="Chantier BEH 2"> <!-- TA DEUXIEME IMAGE -->
+                        <p data-translate="project2_desc">Description du chantier 2...</p> <!-- TA DESCRIPTION -->
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="gallery-item">
+                        <img src="images/chantier-3.jpg" alt="Chantier BEH 3"> <!-- TA TROISIEME IMAGE -->
+                        <p data-translate="project3_desc">Description du chantier 3...</p> <!-- TA DESCRIPTION -->
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="gallery-item">
+                        <img src="images/chantier-4.jpg" alt="Chantier BEH 4"> <!-- TA QUATRIEME IMAGE -->
+                        <p data-translate="project4_desc">Description du chantier 4...</p> <!-- TA DESCRIPTION -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 data-translate="contact_title">Contactez-nous</h2>
+                <div class="contact-info">
+                    <p>
+                        <strong data-translate="contact_email_label">Email :</strong>
+                        <a href="mailto:beh@beh-group.com">beh@beh-group.com</a>
+                    </p>
+                    <p>
+                        <strong data-translate="contact_phone_label">Téléphones :</strong>
+                        <span data-translate="contact_phone_numbers">0748322634 / 0150167412 / 0104898433</span>
+                    </p>
+                    <!-- Adresse si besoin -->
+                    <!-- <p><strong data-translate="contact_address_label">Adresse :</strong> <span data-translate="contact_address">Votre adresse ici...</span></p> -->
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/VOTRE_PAGE_FACEBOOK_ICI" target="_blank" class="facebook-button"> <!-- METS LE LIEN DE TA PAGE FB ICI -->
+                        <i class="fab fa-facebook-f"></i> <span data-translate="contact_facebook">Suivez-nous sur Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-translate="footer_text">© 2023 BEH - Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

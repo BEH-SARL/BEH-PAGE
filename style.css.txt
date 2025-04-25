@@ -1,0 +1,305 @@
+/* Variables de couleur */
+:root {
+    --color-orange: #FFA500;
+    --color-white: #FFFFFF;
+    --color-blue: #007BFF;
+    --color-dark-text: #333;
+    --color-light-text: #f4f4f4;
+    --color-footer-bg: #222;
+    --color-light-gray-bg: #f9f9f9;
+}
+
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne */
+    line-height: 1.6;
+    color: var(--color-dark-text);
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: 1200px; /* Un peu plus large */
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--color-orange);
+    color: var(--color-white);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si manque de place */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px; /* Ajuste la taille du logo */
+    margin-right: 15px;
+}
+
+.site-name {
+    font-size: 2.2rem; /* Taille de "BEH" */
+    font-weight: bold;
+    line-height: 1; /* Pour aligner avec le logo */
+}
+
+.slogan {
+    font-size: 1.1rem;
+    font-style: italic;
+    /* Centre le slogan s'il passe à la ligne sur petit écran */
+    text-align: center;
+    /* Prend l'espace disponible entre logo et nav */
+    flex-grow: 1;
+    margin: 5px 20px; /* Espace autour du slogan */
+    min-width: 200px; /* Evite qu'il soit trop écrasé */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne */
+}
+
+.cta-button {
+    background-color: var(--color-white);
+    color: var(--color-orange);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 15px; /* Espace avant les boutons de langue */
+    border: 2px solid var(--color-white); /* Pour garder la taille au survol */
+}
+
+.cta-button:hover {
+    background-color: var(--color-blue);
+    border-color: var(--color-blue);
+    color: var(--color-white);
+}
+
+/* Boutons de langue */
+.language-switcher button {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    padding: 5px 8px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background: var(--color-white);
+    color: var(--color-orange);
+}
+
+/* Main content */
+main {
+    padding-top: 2rem; /* Espace sous le header sticky */
+}
+
+/* Section Projets / Galerie */
+#projets {
+    padding: 2rem 0 3rem 0; /* Espace vertical */
+}
+
+#projets h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    color: var(--color-orange);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grille responsive */
+    gap: 2rem; /* Espace entre les images */
+}
+
+.gallery-item {
+    background: var(--color-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px; /* Hauteur fixe pour l'uniformité */
+    object-fit: cover;
+    display: block;
+    border-bottom: 3px solid var(--color-orange); /* Touche de couleur */
+}
+
+.gallery-item p {
+    padding: 1rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #555; /* Texte un peu plus doux */
+}
+
+/* Section Contact */
+#contact {
+    padding: 3rem 0;
+    background: var(--color-light-gray-bg); /* Fond légèrement gris */
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--color-orange);
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.contact-info strong {
+    color: var(--color-dark-text);
+}
+
+#contact a {
+    color: var(--color-blue);
+    text-decoration: none;
+}
+#contact a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.facebook-button {
+    display: inline-block;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.facebook-button i {
+    margin-right: 8px;
+}
+
+.facebook-button:hover {
+    background-color: #0056b3; /* Bleu plus foncé */
+    text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+    background: var(--color-footer-bg);
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .slogan {
+        /* Peut prendre toute la largeur sous le logo/nav sur tablette */
+        /* order: 3;  Optionnel: force le slogan en dernier dans le flex */
+        /* width: 100%; Optionnel */
+        margin: 10px 0; /* Ajuste l'espacement vertical */
+        font-size: 1rem;
+    }
+    .header-content {
+        justify-content: center; /* Centre les éléments quand ils s'empilent */
+    }
+    nav {
+        margin-top: 10px; /* Espace si la nav passe à la ligne */
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .site-name {
+        font-size: 1.8rem;
+    }
+    .logo-img {
+        height: 40px;
+    }
+    .cta-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajuste pour mobile */
+        gap: 1.5rem;
+    }
+    #projets h2, #contact h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+     .header-content {
+        flex-direction: column; /* Empile tout verticalement */
+        align-items: center;
+    }
+     .logo-area {
+        margin-bottom: 10px;
+    }
+    .slogan {
+         margin-bottom: 10px;
+    }
+    nav {
+        flex-direction: column; /* Empile bouton contact et langues */
+        align-items: center;
+    }
+     .cta-button {
+         margin-right: 0;
+         margin-bottom: 10px; /* Espace entre contact et langues */
+    }
+    .language-switcher {
+         margin-top: 5px;
+    }
+     .gallery {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+}

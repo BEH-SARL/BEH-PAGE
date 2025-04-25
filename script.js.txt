@@ -1,0 +1,124 @@
+// --- Système de Traduction Simple ---
+
+const translations = {
+    // Français (par défaut)
+    fr: {
+        slogan: "l'expertise, notre devoir",
+        nav_contact_button: "Nous contacter",
+        projects_title: "Nos Chantiers",
+        project1_desc: "Description du chantier 1...", // REMPLACE PAR TA DESCRIPTION
+        project2_desc: "Description du chantier 2...", // REMPLACE PAR TA DESCRIPTION
+        project3_desc: "Description du chantier 3...", // REMPLACE PAR TA DESCRIPTION
+        project4_desc: "Description du chantier 4...", // REMPLACE PAR TA DESCRIPTION
+        contact_title: "Contactez-nous",
+        contact_email_label: "Email :",
+        contact_phone_label: "Téléphones :",
+        contact_phone_numbers: "0748322634 / 0150167412 / 0104898433", // Les numéros ne changent généralement pas
+        // contact_address_label: "Adresse :", // Si tu ajoutes l'adresse
+        // contact_address: "Votre adresse ici...", // Si tu ajoutes l'adresse
+        contact_facebook: "Suivez-nous sur Facebook",
+        footer_text: "© 2023 BEH - Tous droits réservés."
+    },
+    // Anglais - METS LES VRAIES TRADUCTIONS ICI
+    en: {
+        slogan: "Expertise, our duty",
+        nav_contact_button: "Contact us",
+        projects_title: "Our Construction Sites",
+        project1_desc: "Description of site 1...", // ADD REAL TRANSLATION
+        project2_desc: "Description of site 2...", // ADD REAL TRANSLATION
+        project3_desc: "Description of site 3...", // ADD REAL TRANSLATION
+        project4_desc: "Description of site 4...", // ADD REAL TRANSLATION
+        contact_title: "Contact Us",
+        contact_email_label: "Email:",
+        contact_phone_label: "Phones:",
+        contact_phone_numbers: "0748322634 / 0150167412 / 0104898433",
+        // contact_address_label: "Address:",
+        // contact_address: "Your address here...",
+        contact_facebook: "Follow us on Facebook",
+        footer_text: "© 2023 BEH - All rights reserved."
+    },
+    // Espagnol - METS LES VRAIES TRADUCTIONS ICI
+    es: {
+        slogan: "La experiencia, nuestro deber",
+        nav_contact_button: "Contáctanos",
+        projects_title: "Nuestras Obras",
+        project1_desc: "Descripción de la obra 1...", // AÑADE TRADUCCIÓN REAL
+        project2_desc: "Descripción de la obra 2...", // AÑADE TRADUCCIÓN REAL
+        project3_desc: "Descripción de la obra 3...", // AÑADE TRADUCCIÓN REAL
+        project4_desc: "Descripción de la obra 4...", // AÑADE TRADUCCIÓN REAL
+        contact_title: "Contáctanos",
+        contact_email_label: "Correo Electrónico:",
+        contact_phone_label: "Teléfonos:",
+        contact_phone_numbers: "0748322634 / 0150167412 / 0104898433",
+        // contact_address_label: "Dirección:",
+        // contact_address: "Su dirección aquí...",
+        contact_facebook: "Síguenos en Facebook",
+        footer_text: "© 2023 BEH - Todos los derechos reservados."
+    },
+    // Chinois (Simplifié) - METS LES VRAIES TRADUCTIONS ICI
+    zh: {
+        slogan: "专业知识，我们的责任", // PLACEHOLDER - ADD REAL TRANSLATION
+        nav_contact_button: "联系我们", // PLACEHOLDER
+        projects_title: "我们的工地", // PLACEHOLDER
+        project1_desc: "工地1的描述...", // PLACEHOLDER
+        project2_desc: "工地2的描述...", // PLACEHOLDER
+        project3_desc: "工地3的描述...", // PLACEHOLDER
+        project4_desc: "工地4的描述...", // PLACEHOLDER
+        contact_title: "联系我们", // PLACEHOLDER
+        contact_email_label: "电子邮件：", // PLACEHOLDER
+        contact_phone_label: "电话：", // PLACEHOLDER
+        contact_phone_numbers: "0748322634 / 0150167412 / 0104898433",
+        // contact_address_label: "地址：", // PLACEHOLDER
+        // contact_address: "您的地址在这里...", // PLACEHOLDER
+        contact_facebook: "在 Facebook 上关注我们", // PLACEHOLDER
+        footer_text: "© 2023 BEH - 版权所有。" // PLACEHOLDER
+    },
+    // Hindi - METS LES VRAIES TRADUCTIONS ICI
+    hi: {
+        slogan: "विशेषज्ञता, हमारा कर्तव्य", // PLACEHOLDER - ADD REAL TRANSLATION
+        nav_contact_button: "हमसे संपर्क करें", // PLACEHOLDER
+        projects_title: "हमारे निर्माण स्थल", // PLACEHOLDER
+        project1_desc: "साइट 1 का विवरण...", // PLACEHOLDER
+        project2_desc: "साइट 2 का विवरण...", // PLACEHOLDER
+        project3_desc: "साइट 3 का विवरण...", // PLACEHOLDER
+        project4_desc: "साइट 4 का विवरण...", // PLACEHOLDER
+        contact_title: "हमसे संपर्क करें", // PLACEHOLDER
+        contact_email_label: "ईमेल:", // PLACEHOLDER
+        contact_phone_label: "फ़ोन:", // PLACEHOLDER
+        contact_phone_numbers: "0748322634 / 0150167412 / 0104898433",
+        // contact_address_label: "पता:", // PLACEHOLDER
+        // contact_address: "आपका पता यहाँ...", // PLACEHOLDER
+        contact_facebook: "फेसबुक पर हमें फॉलो करें", // PLACEHOLDER
+        footer_text: "© 2023 BEH - सर्वाधिकार सुरक्षित।" // PLACEHOLDER
+    }
+};
+
+// Fonction pour changer la langue (inchangée)
+function switchLanguage(lang) {
+    console.log(`Switching language to: ${lang}`);
+    document.documentElement.lang = lang;
+    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+
+    elementsToTranslate.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            element.innerHTML = translations[lang][key];
+        } else {
+            console.warn(`Translation not found for key: ${key} in language: ${lang}`);
+            // Fallback to French if translation missing
+            if (translations['fr'] && translations['fr'][key]) {
+                element.innerHTML = translations['fr'][key];
+            }
+        }
+    });
+}
+
+// Optionnel: Définir la langue au chargement si nécessaire
+// document.addEventListener('DOMContentLoaded', () => {
+//     const userLang = navigator.language.split('-')[0]; // Tente de détecter la langue du navigateur
+//     if (translations[userLang]) {
+//         switchLanguage(userLang);
+//     } else {
+//         switchLanguage('fr'); // Défaut français
+//     }
+// });
